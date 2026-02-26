@@ -1,8 +1,8 @@
 // --- CONFIGURATION ---
 const videoList = [
-    'videos/sample1.mp4',
-    'videos/sample2.mp4',
-    'videos/sample3.mp4',
+    './videos/sample1.mp4',
+    './videos/sample2.mp4',
+    './videos/sample3.mp4',
     // Add paths up to 100...
 ];
 
