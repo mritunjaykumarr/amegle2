@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMEGLE | Premium Video Chat</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">AME<span>GLE</span></div>
+            <nav class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Safety</a>
+                <a href="#">Premium</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="login-btn">Start Match</button>
+            </div>
+        </div>
+    </header>
+
+    <div id="landing-page" class="screen">
+        <main class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Connect <span class="highlight">Instantly</span> With The World.</h1>
+                    <p>Experience the next generation of video chat. Encrypted, fast, and high-quality connections at your fingertips.</p>
+                    <div class="trust-badges">
+                        <span><i class="fas fa-user-shield"></i> Secure</span>
+                        <span><i class="fas fa-bolt"></i> Fast</span>
+                        <span><i class="fas fa-globe"></i> Global</span>
+                    </div>
+                </div>
+
+                <div class="glass-card">
+                    <h3>Get Started</h3>
+                    <div class="input-group">
+                        <input type="text" id="username" placeholder="Your name..." autocomplete="off">
+                    </div>
+
+                    <div class="gender-selection">
+                        <label class="gender-option">
+                            <input type="radio" name="gender" value="male" checked>
+                            <span class="emoji-card">👨 Male</span>
+                        </label>
+                        <label class="gender-option">
+                            <input type="radio" name="gender" value="female">
+                            <span class="emoji-card">👩 Female</span>
+                        </label>
+                    </div>
+
+                    <div class="custom-select-container" id="country-dropdown">
+                        <label>Select Your Location</label>
+                        <div class="selected-option">
+                            <span>🇺🇸 United States</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        
+                        <div class="options-grid hidden">
+                            <div class="option" data-value="us">
+                                <span class="flag">🇺🇸</span>
+                                <span class="c-name">United States</span>
+                            </div>
+                            <div class="option" data-value="in">
+                                <span class="flag">🇮🇳</span>
+                                <span class="c-name">India</span>
+                            </div>
+                            <div class="option" data-value="gb">
+                                <span class="flag">🇬🇧</span>
+                                <span class="c-name">UK</span>
+                            </div>
+                            <div class="option" data-value="br">
+                                <span class="flag">🇧🇷</span>
+                                <span class="c-name">Brazil</span>
+                            </div>
+                            <div class="option" data-value="ca">
+                                <span class="flag">🇨🇦</span>
+                                <span class="c-name">Canada</span>
+                            </div>
+                            <div class="option" data-value="ae">
+                                <span class="flag">🇦🇪</span>
+                                <span class="c-name">UAE</span>
+                            </div>
+                            <div class="option" data-value="de">
+                                <span class="flag">🇩🇪</span>
+                                <span class="c-name">Germany</span>
+                            </div>
+                            <div class="option" data-value="fr">
+                                <span class="flag">🇫🇷</span>
+                                <span class="c-name">France</span>
+                            </div>
+                            <div class="option" data-value="jp">
+                                <span class="flag">🇯🇵</span>
+                                <span class="c-name">Japan</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button id="start-btn" class="primary-btn pulse">🚀 Start Call</button>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2026 Amegle AI. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Terms</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div id="call-screen" class="screen hidden">
+        <div class="video-grid">
+            <div class="video-container" id="remote-container">
+                <video id="remote-video" playsinline>
+                    <source src="videos/sample1.mp4" type="video/mp4">
+                </video>
+                <div id="loading-overlay" class="hidden">Searching for partner...</div>
+                <div class="badge">🔴 LIVE</div>
+                <div class="timer" id="call-timer">00:00</div>
+            </div>
+
+            <div class="video-container" id="local-container">
+                <video id="local-video" autoplay playsinline muted></video>
+                <div class="user-profile">
+                    <div class="avatar"></div>
+                    <span id="display-name">User</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="chat-box">
+            <div id="chat-messages"></div>
+            <div class="chat-input-area">
+                <input type="text" id="chat-input" placeholder="✨ Type message...">
+                <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="control-btn" id="toggle-mic" title="Mute/Unmute Mic">
+                <i class="fas fa-microphone"></i>
+            </button>
+            <button class="control-btn next-btn" id="next-call">
+                Next <i class="fas fa-forward"></i>
+            </button>
+            <button class="control-btn end-btn" onclick="location.reload()" title="End Call">
+                <i class="fas fa-phone-slash"></i>
+            </button>
+        </div>
+    </div>
+
+<div id="paywall" class="modal hidden">
+    <div class="paywall-card">
+        <div class="premium-icon">
+            <i class="fas fa-crown"></i>
+        </div>
+        <h2>Premium Access</h2>
+        <p>Your trial has ended. Unlock unlimited global calls and a completely ad-free experience.</p>
+        
+        <div class="price-tag">
+            <span class="currency">₹</span>
+            <span class="amount">59</span>
+            <span class="duration">/ session</span>
+        </div>
+        
+       <button class="unlock-btn-premium" onclick="payNow()">
+  Unlock Now
+</button>
+
+<script>
+function payNow() {
+  window.location.href = "https://rzp.io/rzp/n6EfjvI";
+}
+</script>
+        <p class="secure-text"><i class="fas fa-lock"></i> Secure encrypted payment</p>
+    </div>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
